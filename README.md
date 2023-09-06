@@ -53,3 +53,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
  
 
 
+## Stage 2: Add Dialog Module
+
+    Need to add a MatDialogModule that will hold the Data Model in a Form for entering data. 
+
+    1. In the Terminal , enter ng g c dialog  to create a dialog componet module in your project.
+
+    2. 
