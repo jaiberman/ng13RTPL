@@ -1,27 +1,55 @@
-# Ng13RTPL
+# Ng13RTPL (Angular13 Road Trip Play List)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.11.
 
-## Development server
+## Audiance
+    For anyone who love to play and listen Tamil songs on long road trips.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Requirements
+    Required NodeJS 14, npm 8, Angular/Cli 13.
+    run this command in your terminal or command line window 'ng --version' and make sure your Angular CLI version is atleast 13 
+    
+    Also install VSCode or use GEdit or any IDE/Editor. 
 
-## Code scaffolding
+    I have VSCode, installed in my Linux Desktop.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Getting Started
+    Open Command Line or Terminal and navigate to your preferred folder
+    1.  ng new ng13RTPL <enter>
+    .. after completed scafolding the project switch to the 'ng13RTPL' folder.
 
-## Build
+    2. time to open your project in an IDE like VSCode or gedit,
+    from your project folder issue:   vscode . and wait for it to open with your scafolded project. 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+    3. Open termina in VSCode and type this: 
+        ng serve -o  
+     
+    4. If all went well you should see your project in the default browser. 
 
-## Running unit tests
+    # Add @angular/material 
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+    1. ng add @angular/material
 
-## Running end-to-end tests
+    # Add json-server
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+    2. ng install --save json-server
 
-## Further help
+    # Data Model
+      "movie": <string>,
+      "song": <string>,
+      "music_director": <string>,
+      "o_male_signers": <string>,
+      "o_female_singers": <string>,
+      "year": <number>,
+      "r_male_signers": <string>,
+      "r_female_singers": <string>,
+      "episode_number": <number>,
+      "song_start_time": <number,
+      "song_end_time": <number>,
+      "yt_index": <string>,
+      "song_type": <string>,
+      "channel_name": <string>,
+      "id": <number>
+ 
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
