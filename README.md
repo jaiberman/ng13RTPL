@@ -57,6 +57,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
     Need to add a MatDialogModule that will hold the Data Model in a Form for entering data. 
 
-    1. In the Terminal , enter ng g c dialogTrac  to create a dialog componet module in your project.
+    1. In the Terminal , enter ng g c dialogTrack  to create a dialog componet module in your project.
 
-    2. 
+    2. Update the openDialog() nmethod to open the DialogTrack instead of aler message.
+
+    3. Create a ReactiveFormModule and define FormGroup to bind to input elements. 
