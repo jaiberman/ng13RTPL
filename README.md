@@ -62,3 +62,14 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
     2. Update the openDialog() nmethod to open the DialogTrack instead of aler message.
 
     3. Create a ReactiveFormModule and define FormGroup to bind to input elements. 
+
+## Stage 3: Add Service API to save in JSON-Server
+
+    1. install json-server 
+        open a new terminal
+        npm i -g --save json-server
+    2. start json-server
+        json-server --watch db.json
+    3. create a api service 
+        ng g s services/api
+    4. Create POST, GET, UPDATE, DELETE functions.

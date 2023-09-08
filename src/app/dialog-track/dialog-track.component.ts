@@ -1,3 +1,4 @@
+import { ApiService } from '../services/api.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog'
@@ -10,7 +11,7 @@ import { MatDialogRef } from '@angular/material/dialog'
 export class DialogTrackComponent implements OnInit {
   trackTypeList = ["Male Solo", "Female Solo", "Duet", "Duet Corus"];
   trackForm !: FormGroup;
-  constructor(private formBuilder : FormBuilder) { }
+  constructor(private formBuilder : FormBuilder, private api : ApiService, private dialogRef : MatDialogRef<DialogTrackComponent>) { }
 
   ngOnInit(): void {
     this.trackForm = this.formBuilder.group({
@@ -31,6 +32,20 @@ export class DialogTrackComponent implements OnInit {
     })
   }
   addTrack(){
-    console.log(this.trackForm.value);
+    // console.log(this.trackForm.value);
+    if(this.trackForm.valid){
+      this.api.postTrack(this.trackForm.value)
+      .subscribe({
+        next:(res) =>{
+          alert("Track added successfully!");
+          this.trackForm.reset();
+          this.dialogRef.close('save');
+        },
+        error:()=>{
+          alert("Error while adding the product!")
+        }
+      })
+    }
+
   }
 }
