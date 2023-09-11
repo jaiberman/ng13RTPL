@@ -73,3 +73,5 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
     3. create a api service 
         ng g s services/api
     4. Create POST, GET, UPDATE, DELETE functions.
+
+## Stage 4: Create a Table View
