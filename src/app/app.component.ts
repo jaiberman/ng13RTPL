@@ -14,7 +14,7 @@ import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 export class AppComponent implements OnInit{
   title = 'ng13RTPL';
 
-  displayedColumns: string[] = ['episode_number', 'song', 'movie', 'channel_name'];
+  displayedColumns: string[] = ['episode_number', 'song', 'movie', 'channel_name', 'action'];
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -31,7 +31,11 @@ export class AppComponent implements OnInit{
   openDialog() {
     this.dialog.open(DialogTrackComponent, {
       width: '39%'
-    });
+    }).afterClosed().subscribe(val=>{
+      if(val==='save'){
+        this.getAllTracks();
+      }
+    })
   }
 
   getAllTracks(){
@@ -44,7 +48,34 @@ export class AppComponent implements OnInit{
         this.dataSource.sort = this.sort;
       },
       error:(err)=>{
-        alert("Error while fetching data!");
+        //alert("Error while fetching data!");
+        console.error("Error while fetching data!");
+      }
+    })
+  }
+
+  editTrack(row: any){
+    this.dialog.open(DialogTrackComponent, {
+      width:'39%',
+      data: row
+    }).afterClosed().subscribe(val=>{
+        if(val==='update'){
+          this.getAllTracks();
+        }
+    })
+  }
+
+  deleteTrack(id: number){
+    this.api.deleteTrack(id)
+    .subscribe({
+      next:(res)=>{
+        //alert("Record deleted successfully!!");
+        console.log("Record deleted successfully!!");
+        this.getAllTracks();
+      },
+      error:()=>{
+        //alert("Error while deleting the records");
+        console.log("Record deleted successfully!!");
       }
     })
   }

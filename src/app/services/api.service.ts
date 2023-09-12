@@ -15,4 +15,12 @@ export class ApiService {
   getTrack(){
     return this.http.get<any>("http://localhost:3000/trackList/");
   }
+
+  putTrack(data: any, id: number){
+    return this.http.put<any>("http://localhost:3000/trackList/"+id, data);
+  }
+
+  deleteTrack(id: number){
+    return this.http.delete<any>("http://localhost:3000/trackList/"+id);
+  }
 }

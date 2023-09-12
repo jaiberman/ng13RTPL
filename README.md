@@ -75,3 +75,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
     4. Create POST, GET, UPDATE, DELETE functions.
 
 ## Stage 4: Create a Table View
+
+
+## Stage 5: Create Action medoth Edit/Delete in the MatTableModule view
+    
